@@ -1,0 +1,153 @@
+/* styles.css */
+:root {
+    --bg-dark: #121212;
+    --bg-darker: #0a0a0a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --accent-orange: #ff7b25;
+    --accent-orange-dark: #e56a1a;
+    --card-bg: #1e1e1e;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255, 123, 37, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 123, 37, 0.1) 0%, transparent 50%);
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: var(--bg-darker);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-orange-dark));
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent-orange);
+    border-radius: 3px;
+}
+
+h1 span {
+    display: inline-block;
+    position: relative;
+    color: var(--accent-orange);
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    display: inline-block;
+    padding: 0.2rem 0;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-orange);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: white;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Animation for subtle movement */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 2rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
