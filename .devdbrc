@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "d:\\Projects\\Python\\Restful API -Flask-SQLite-Postman (Cafe&Wifi)\\instance\\cafes.db"
+  }
+]
